@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.thefirstlineofcode.basalt</groupId>
+		<artifactId>com.thefirstlineofcode.basalt</artifactId>
+		<version>1.1.0-RELEASE</version>
+	</parent>
+
+	<groupId>com.thefirstlineofcode.lithosphere.tutorials.helloxmpp</groupId>
+	<artifactId>hello-xmpp-protocol</artifactId>
+	<name>Hello XMPP protocol</name>
+	<version>0.0.1-RELEASE</version>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.thefirstlineofcode.basalt</groupId>
+			<artifactId>basalt-oxm</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>com.thefirstlineofcode.releases</id>
+			<name>TheFirstLineOfCode Repository - Releases</name>
+			<url>http://120.25.166.188:9090/repository/maven-releases/</url>
+		</repository>
+	</repositories>
+	
+</project>
