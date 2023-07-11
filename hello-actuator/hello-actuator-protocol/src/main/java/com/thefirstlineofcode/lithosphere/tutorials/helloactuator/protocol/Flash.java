@@ -12,7 +12,11 @@ public class Flash {
 	public Flash() {
 		repeat = 1;
 	}
-
+	
+	public Flash(int repeat) {
+		setRepeat(repeat);
+	}
+	
 	public int getRepeat() {
 		return repeat;
 	}

@@ -56,8 +56,6 @@ public class Main {
 			}
 		}
 		
-		new LogConfigurator().configure(HatModelDescriptor.MODEL_NAME, LogLevel.INFO);
-		
 		try {
 			simpleLight = new HelloActuatorThing();
 		} catch (IllegalArgumentException e) {

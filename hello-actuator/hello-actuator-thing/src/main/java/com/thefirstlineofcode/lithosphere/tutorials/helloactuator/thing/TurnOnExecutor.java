@@ -4,9 +4,9 @@ import com.thefirstlineofcode.basalt.xmpp.core.ProtocolException;
 import com.thefirstlineofcode.basalt.xmpp.core.stanza.Iq;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.TurnOn;
 import com.thefirstlineofcode.sand.client.actuator.IExecutor;
-import com.thefirstlineofcode.sand.client.actuator.IWorkerAware;
+import com.thefirstlineofcode.sand.client.actuator.IThingControllerAware;
 
-public class TurnOnExecutor implements IExecutor<TurnOn>, IWorkerAware<ISimpleLight> {
+public class TurnOnExecutor implements IExecutor<TurnOn>, IThingControllerAware<ISimpleLight> {
 	private ISimpleLight simpleLight;
 
 	@Override
@@ -17,8 +17,8 @@ public class TurnOnExecutor implements IExecutor<TurnOn>, IWorkerAware<ISimpleLi
 	}
 
 	@Override
-	public void setWorker(ISimpleLight worker) {
-		simpleLight = worker;
+	public void setThingController(ISimpleLight simpleLight) {
+		this.simpleLight = simpleLight;
 	}
 
 }

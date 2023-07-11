@@ -3,9 +3,9 @@ package com.thefirstlineofcode.lithosphere.tutorials.helloactuator.thing;
 import com.thefirstlineofcode.basalt.xmpp.core.stanza.Iq;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.TurnOff;
 import com.thefirstlineofcode.sand.client.actuator.IExecutor;
-import com.thefirstlineofcode.sand.client.actuator.IWorkerAware;
+import com.thefirstlineofcode.sand.client.actuator.IThingControllerAware;
 
-public class TurnOffExecutor implements IExecutor<TurnOff>, IWorkerAware<ISimpleLight> {
+public class TurnOffExecutor implements IExecutor<TurnOff>, IThingControllerAware<ISimpleLight> {
 	private ISimpleLight simpleLight;
 
 	@Override
@@ -16,7 +16,7 @@ public class TurnOffExecutor implements IExecutor<TurnOff>, IWorkerAware<ISimple
 	}
 
 	@Override
-	public void setWorker(ISimpleLight worker) {
-		simpleLight = worker;
+	public void setThingController(ISimpleLight simpleLight) {
+		this.simpleLight = simpleLight;
 	}
 }

@@ -6,7 +6,6 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 import com.thefirstlineofcode.basalt.xmpp.core.Protocol;
-import com.thefirstlineofcode.chalk.core.stream.StandardStreamConfig;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.Flash;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.HatModelDescriptor;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.TurnOff;
@@ -28,11 +27,7 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 	private GpioPinDigitalOutput ledPin;
 	
 	public HelloActuatorThing() {
-		this(null);
-	}
-	
-	public HelloActuatorThing(StandardStreamConfig streamConfig) {
-		super(THING_MODEL, streamConfig, true);
+		super(THING_MODEL, null, true);
 		
 		configureGpio();
 	}
@@ -101,16 +96,6 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 	}
 	
 	@Override
-	protected String loadThingId() {
-		return THING_MODEL + "-" + ThingsUtils.generateRandomId(8);
-	}
-	
-	@Override
-	protected String loadRegistrationKey() {
-		return "abcdefghijkl";
-	}
-	
-	@Override
 	public void turnOn() {
 		ledPin.high();
 	}
@@ -125,6 +110,10 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 		if (repeat <= 0 || repeat > 8)
 			throw new ExecutionException(-1);
 		
+		boolean isLightOn = ledPin.isHigh();
+		if (isLightOn)
+			ledPin.low();
+		
 		for (int i = 0; i < repeat; i++) {			
 			flash();
 			
@@ -134,6 +123,9 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 				throw new ExecutionException(-2);
 			}
 		}
+		
+		if (isLightOn)
+			ledPin.high();
 	}
 	
 	private void flash() throws ExecutionException {
@@ -160,5 +152,15 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 			throw new RuntimeException("Failed to start thing.", e);
 		}
 
+	}
+	
+	@Override
+	protected String loadThingId() {
+		return THING_MODEL + "-" + ThingsUtils.generateRandomId(8);
+	}
+	
+	@Override
+	protected String loadRegistrationCode() {
+		return "abcdefghijkl";
 	}
 }
