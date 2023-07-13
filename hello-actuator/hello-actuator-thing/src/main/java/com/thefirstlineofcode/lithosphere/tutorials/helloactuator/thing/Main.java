@@ -1,9 +1,6 @@
 package com.thefirstlineofcode.lithosphere.tutorials.helloactuator.thing;
 
 import com.thefirstlineofcode.chalk.core.stream.StandardStreamConfig;
-import com.thefirstlineofcode.chalk.logger.LogConfigurator;
-import com.thefirstlineofcode.chalk.logger.LogConfigurator.LogLevel;
-import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.HatModelDescriptor;
 
 public class Main {
 	private HelloActuatorThing simpleLight;
