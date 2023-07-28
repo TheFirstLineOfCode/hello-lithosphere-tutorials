@@ -1,4 +1,4 @@
-package com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol;
+package com.thefirstlineofcode.lithosphere.tutorials.hellolora.protocol;
 
 import com.thefirstlineofcode.basalt.oxm.coc.annotations.ProtocolObject;
 import com.thefirstlineofcode.basalt.xmpp.core.Protocol;

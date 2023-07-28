@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.thefirstlineofcode.sand</groupId>
+		<artifactId>sand-protocols</artifactId>
+		<version>1.0.0-BETA3</version>
+	</parent>
+
+	<groupId>com.thefirstlineofcode.lithosphere.tutorials.hellolora</groupId>
+	<artifactId>hello-lora-protocol</artifactId>
+	<name>Hello LoRa protocol</name>
+	<version>0.0.1-RELEASE</version>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.thefirstlineofcode.sand.protocols</groupId>
+			<artifactId>sand-protocols-thing</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.thefirstlineofcode.sand.protocols</groupId>
+			<artifactId>sand-protocols-lora-gateway</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>com.thefirstlineofcode.releases</id>
+			<name>TheFirstLineOfCode Repository - Releases</name>
+			<url>http://120.25.166.188:9090/repository/maven-releases/</url>
+		</repository>
+	</repositories>
+	
+</project>
