@@ -9,7 +9,7 @@ import com.thefirstlineofcode.sand.protocols.thing.SimpleThingModelDescriptor;
 
 public class HlgModelDescriptor extends SimpleThingModelDescriptor {
 	public static final String MODEL_NAME = "HLG";
-	public static final String DESCRIPTION = "Hello LoRa gateway";
+	public static final String DESCRIPTION = "Hello LoRa Gateway";
 	
 	public HlgModelDescriptor() {
 		super(MODEL_NAME, DESCRIPTION, true, null, null, createSupportedActions());

@@ -8,7 +8,7 @@ import com.thefirstlineofcode.sand.protocols.thing.SimpleThingModelDescriptor;
 
 public class HltModelDescriptor extends SimpleThingModelDescriptor {
 	public static final String MODEL_NAME = "HLT";
-	public static final String DESCRIPTION = "Hello LoRa thing";
+	public static final String DESCRIPTION = "Hello LoRa Thing";
 	
 	public HltModelDescriptor() {
 		super(MODEL_NAME, DESCRIPTION, false, null, null, createSupportedActions());

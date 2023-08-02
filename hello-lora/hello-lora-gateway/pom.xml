@@ -14,7 +14,7 @@
 	<groupId>com.thefirstlineofcode.lithosphere.tutorials.hellolora</groupId>
 	<artifactId>hello-lora-gateway</artifactId>
 	<version>0.0.1-RELEASE</version>
-	<name>Hello LoRa gateway</name>
+	<name>Hello LoRa Gateway</name>
 
 	<dependencies>
 		<dependency>
@@ -24,14 +24,6 @@
 		<dependency>
 			<groupId>com.thefirstlineofcode.chalk</groupId>
 			<artifactId>chalk-logger</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.thefirstlineofcode.sand.client</groupId>
-			<artifactId>sand-client-edge</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.thefirstlineofcode.sand.client</groupId>
-			<artifactId>sand-client-lora-gateway</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.thefirstlineofcode.sand.client</groupId>

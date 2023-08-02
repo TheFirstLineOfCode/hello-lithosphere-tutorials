@@ -8,7 +8,7 @@ import com.thefirstlineofcode.sand.protocols.thing.SimpleThingModelDescriptor;
 
 public class HatModelDescriptor extends SimpleThingModelDescriptor {
 	public static final String MODEL_NAME = "HAT";
-	public static final String DESCRIPTION = "Hello acuator thing";
+	public static final String DESCRIPTION = "Hello Acuator Thing";
 	
 	public HatModelDescriptor() {
 		super(MODEL_NAME, DESCRIPTION, false, null, null, createSupportedActions());
