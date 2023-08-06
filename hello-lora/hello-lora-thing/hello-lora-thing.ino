@@ -1,18 +1,18 @@
 #include <Arduino_BuiltIn.h>
 
 #include <thing.h>
-#include <tuxp.h>
 #include <mcu_board_adaptation.h>
 #include <radio_module_adaptation.h>
+#include <arduino_unique_id_generator.h>
 
+#define MODEL_NAME "HLT"
 #define LED_PIN 12
 
 void setup() {
-  configureMcuBoard("HLT");
+  configureMcuBoard(MODEL_NAME);
   configureRadioModule();
   
-  // resetThing();
-  registerThingIdLoader(generateThingIdUsingUniqueIdLibrary);
+  registerThingIdLoader(loadThingId);
   registerRegistrationCodeLoader(loadRegistrationCode);
 
   registerThingProtocolsConfigurer(configureThingProtocolsImpl);
@@ -20,6 +20,10 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   
   toBeAThing();
+}
+
+char *loadThingId() {
+  return generateThingIdUsingUniqueIdLibrary(MODEL_NAME);
 }
 
 char *loadRegistrationCode() {
