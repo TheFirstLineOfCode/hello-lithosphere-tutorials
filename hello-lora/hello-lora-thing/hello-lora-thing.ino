@@ -15,7 +15,7 @@ void setup() {
   registerThingIdLoader(loadThingId);
   registerRegistrationCodeLoader(loadRegistrationCode);
 
-  registerThingProtocolsConfigurer(configureThingProtocolsImpl);
+  registerThingProtocolsConfigurer(configureThingProtocols);
   
   pinMode(LED_PIN, OUTPUT);
   
@@ -71,7 +71,7 @@ int8_t processTurnOff(Protocol *protocol) {
   return 0;
 }
 
-void configureThingProtocolsImpl() {
+void configureThingProtocols() {
   ProtocolName pnFlash = {0xf7, 0x01, 0x00};
   registerActionProtocol(pnFlash, processFlash, false);
 
