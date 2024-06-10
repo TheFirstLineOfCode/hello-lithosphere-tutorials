@@ -6,11 +6,11 @@ import java.util.Map;
 import com.thefirstlineofcode.lithosphere.tutorials.hellolora.protocol.HlgModelDescriptor;
 import com.thefirstlineofcode.lithosphere.tutorials.hellolora.protocol.HltModelDescriptor;
 import com.thefirstlineofcode.sand.client.actuator.IActuator;
-import com.thefirstlineofcode.sand.client.concentrator.IConcentrator;
 import com.thefirstlineofcode.sand.client.edge.AbstractEdgeThing;
 import com.thefirstlineofcode.sand.client.lora.gateway.ChangeWorkingModeExecutor;
 import com.thefirstlineofcode.sand.client.lora.gateway.ILoraGateway;
 import com.thefirstlineofcode.sand.client.lora.gateway.LoraGatewayPlugin;
+import com.thefirstlineofcode.sand.client.lpwanconcentrator.ILpwanConcentrator;
 import com.thefirstlineofcode.sand.client.pi.ashining.As32Ttl100LoraCommunicator;
 import com.thefirstlineofcode.sand.client.thing.ThingsUtils;
 import com.thefirstlineofcode.sand.client.thing.commuication.ICommunicator;
@@ -76,7 +76,7 @@ public class HelloLoraGateway extends AbstractEdgeThing {
 	}
 	
 	private void configureConcentrator(ILoraGateway gateway) {
-		IConcentrator concentrator = gateway.getConcentrator();
+		ILpwanConcentrator concentrator = gateway.getLpwanConcentrator();
 		
 		concentrator.registerLanThingModel(new HltModelDescriptor());
 		regiserExecutors(concentrator, gateway);
