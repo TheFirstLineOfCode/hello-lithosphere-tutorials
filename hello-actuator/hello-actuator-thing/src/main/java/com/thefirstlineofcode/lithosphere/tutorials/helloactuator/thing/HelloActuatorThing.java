@@ -11,6 +11,7 @@ import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.HatMo
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.TurnOff;
 import com.thefirstlineofcode.lithosphere.tutorials.helloactuator.protocol.TurnOn;
 import com.thefirstlineofcode.sand.client.actuator.ActuatorPlugin;
+import com.thefirstlineofcode.sand.client.actuator.ExecutorFactoryAdapter;
 import com.thefirstlineofcode.sand.client.actuator.IActuator;
 import com.thefirstlineofcode.sand.client.actuator.IExecutor;
 import com.thefirstlineofcode.sand.client.actuator.IExecutorFactory;
@@ -69,7 +70,7 @@ public class HelloActuatorThing extends AbstractEdgeThing implements ISimpleLigh
 	}
 	
 	private IExecutorFactory<?> createFlashExecutorFactory() {
-		return new IExecutorFactory<Flash>() {
+		return new ExecutorFactoryAdapter<Flash>() {
 			@Override
 			public Protocol getProtocol() {
 				return Flash.PROTOCOL;
